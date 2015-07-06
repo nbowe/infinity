@@ -1,0 +1,17 @@
+.vagrant/
+CMakeFiles/
+
+# Outputs from building firmware
+layouts/*/buildvars.h
+layouts/*/cmake_install.cmake
+layouts/*/CMakeCache.txt
+layouts/*/compiler
+layouts/*/generatedKeymap.h
+layouts/*/kiibohd.dfu.bin
+layouts/*/kiibohd.elf
+layouts/*/kiibohd.lss
+layouts/*/kiibohd.sym
+layouts/*/kll_defs.h
+layouts/*/link.map
+layouts/*/load
+layouts/*/Makefile
