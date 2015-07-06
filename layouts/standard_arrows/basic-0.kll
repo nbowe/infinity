@@ -1,0 +1,28 @@
+Name = "arrows";
+Layout = "Standard";
+Version = "0.1";
+Author = "Niki Bowe 2015";
+KLL = "0.3";
+Date = "2015-07-04";
+
+U"Backslash" : U"BACKTICK";
+U"BACKTICK" : U"BACKSPACE";
+U"BACKSPACE" : U"BACKSLASH";
+
+# Traditional caps-ctrl
+U"CTRL" : U"CAPSLOCK";
+U"FUNCTION2" : U"LCTRL";
+
+# Traditional win-alt
+U"LALT" : U"LGUI";
+U"LGUI" : U"LALT";
+
+# Arrows by default
+U"RSHIFT" : U"UP";
+U"RALT" : U"LEFT";
+U"FUNCTION3" : U"DOWN";
+U"FUNCTION4" : U"RIGHT";
+
+# layer shift
+U"FUNCTION1" : layerShift( 1 );
+U"RGUI" : layerShift( 1 );
