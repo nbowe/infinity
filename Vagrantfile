@@ -8,6 +8,7 @@
 Vagrant.configure(2) do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
+  config.vm.box = "ubuntu/trusty64"
 
   config.vm.provider "virtualbox" do |vb|
     # vb.memory = "1024"
@@ -35,18 +36,12 @@ Vagrant.configure(2) do |config|
     sudo apt-get -y install screen
     # Clone the kiibohd repo
     sudo -Hn -u vagrant git clone https://github.com/kiibohd/controller.git
-    # build default firmware
-    sudo -Hn -u vagrant mkdir controller/build_infinite
-    pushd controller/build_infinite
-    cmake -DCHIP=mk20dx128vlf5 -DScanModule=MD1 -DMacroModule=PartialMap \
-      -DOutputModule=pjrcUSB -DDebugModule=full \
-      -DBaseMap=defaultMap \
-      -DDefaultMap="md1Overlay stdFuncMap" \
-      -DPartialMaps="hhkbpro2" \
-      ..
-    make
+    # Link layouts for convenience.
+    sudo -Hn -u vagrant ln -s /vagrant/layouts layouts
+    # Build default firmware.
+    pushd layouts/default
+    sudo -Hn -u vagrant ./build.sh
     popd
-    # build my firmware
-    # Modify motd for prompt.
+    # TODO: Modify motd.
   SHELL
 end
