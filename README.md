@@ -33,7 +33,7 @@ vagrant plugin install vagrant-triggers
    If you only have 1 keyboard, you can try `sleep 5; sudo ./load`, and push the flash button while its sleeping.
  * Cleanup.
    `exit` the vm, then `vagrant destroy` to cleanup.
-   `git clean --fXd` from the layouts directory to clean up build artifacts.
+   `git clean --fXd` from the layouts directory to clean up build artifacts (automatically done if vagrant-triggers is installed).
 
 
 [1]: https://www.massdrop.com/buy/infinity-keyboard-kit
