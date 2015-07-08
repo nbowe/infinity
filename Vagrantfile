@@ -69,7 +69,7 @@ Vagrant.configure(2) do |config|
   if Vagrant.has_plugin?("vagrant-triggers")
     config.trigger.before :destroy do
       info "Cleaning build artifacts from layouts."
-      run_remote  "cd /home/vagrant/layouts && git clean -fxd"
+      run_remote  "cd /home/vagrant/layouts && git clean -fXd"
     end
   end
 end
